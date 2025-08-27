@@ -1,18 +1,7 @@
-# Salesforce DX Project: Next Steps
+1. After deploying the addressValidationTool lwc and UspsService apex class, you still need to create a Named Credential, External Credential, Principal for External Credential
+2. To create the credentials, go to https://developers.usps.com/getting-started and follow the instructions.
+3. Get your Usps Client Id and Client Secreet.
+4. Setup your External Credential using "Client Credentials with Client Secret flow" for Authentication Flow Type.
+5. Use your Cliend Id and Client Secret to create the Principal for the External Credential.
+6. Create the Named Credential and name it "UspsNamedCredential"  (or change the reference in the apex class UspsService.cls)
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
-
-## How Do You Plan to Deploy Your Changes?
-
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
-
-## Configure Your Salesforce DX Project
-
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
-
-## Read All About It
-
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
