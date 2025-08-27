@@ -26,6 +26,11 @@
     padding-bottom: 16px;
 }
 
+.vStreet2 {
+    display: inline-block;
+    margin-left: 4px;
+}
+
 .error {
     color: #ba0517;
 }

@@ -24,6 +24,9 @@ export default class AddressVerificationTool extends LightningElement {
 
     _iconName = 'question';
 
+    verifiedAddress = {};
+    showVerifiedAddress = false;
+
     @wire(getRecord, {
         recordId: '$recordId',
         fields: [BILLING_STREET, BILLING_CITY, BILLING_STATE, BILLING_POSTAL_CODE, BILLING_COUNTRY]
@@ -73,7 +76,10 @@ export default class AddressVerificationTool extends LightningElement {
 
     async verifyAddressFn() {
 
+        // reset
         this.message = '';
+        this.verifiedAddress = {};
+        this.showVerifiedAddress = false;
 
         // validate input
         if(this.isEmpty(this.billingStreet)) {
@@ -110,17 +116,16 @@ export default class AddressVerificationTool extends LightningElement {
             data.body = JSON.parse(data.body);
 
             if(data.status === 200) {
-                this.verifiedAddress = data.body.address;
-                this.showVerifiedAddress = true;
 
                 let isCorrectionPresent = !!data.body.corrections[0].text;
 
                 if(data.body.matches[0].code === "31") {
                     this._iconName = 'check';
                     this.message = 'Address is valid';
-                }
 
-                if(isCorrectionPresent) {
+                    this.verifiedAddress = data.body.address;
+                    this.showVerifiedAddress = true;
+                } else if(isCorrectionPresent) {
                     this._iconName = 'warning';
                     this.message = data.body.corrections[0].text;
                 }
