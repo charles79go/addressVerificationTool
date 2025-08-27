@@ -1,0 +1,42 @@
+.body {
+    padding: 15px;
+    font-size: 16px;
+}
+
+.addressRow {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.addressContainer {
+    width: 60%;
+}
+
+.addressLabel {
+    font-weight: 600;
+}
+
+.imageContainer {
+    margin-top: 8px;
+    height: 100px;
+    width: 29%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-bottom: 16px;
+}
+
+.error {
+    color: #ba0517;
+}
+.warning {
+    color: #a96404;
+}
+
+.success {
+    color: #008000;
+}
+
+.defaultColor {
+    color: #000000;
+}  

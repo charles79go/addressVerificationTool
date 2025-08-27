@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Address Verification">
+        <lightning-button class="slds-m-left_medium" onclick={verifyAddressFn} label="Verify" slot="actions" variant="brand"></lightning-button>
+        <div class="body">
+
+                <div class="addressRow">
+
+                    <div class="addressContainer">
+                        <div class="addressLabel">Billing Address</div>
+                        <div><span class="bStreet bAdd">{billingStreet}</span></div>
+                        <div><span class="bCity bAdd">{billingCity}</span>, <span class="bState bAdd">{billingState}</span>, <span class="bZIPCode bAdd">{billingPostalCode}</span></div>
+                    </div>
+
+
+                    <div class="imageContainer">
+                        <lightning-icon icon-name={iconName} size="large" variant={iconVariant} alternative-text="check" class="checkIcon"></lightning-icon>
+                    </div>
+
+                </div>
+
+                <template lwc:if={showError}>
+                    <div class={color}>{message}</div>
+                </template>
+
+        </div>
+    </lightning-card>
+</template>
