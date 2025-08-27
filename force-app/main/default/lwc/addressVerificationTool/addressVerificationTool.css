@@ -1,3 +1,7 @@
+.mainContainer {
+    position: relative;
+}
+
 .body {
     padding: 15px;
     font-size: 16px;
